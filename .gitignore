@@ -9,8 +9,8 @@ manager
 
 
 # assets
-assets
-!assets/images
+assets/*
+!/assets/images
 
 # dev
 .vscode/
