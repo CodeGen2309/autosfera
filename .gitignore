@@ -1,0 +1,18 @@
+# main
+core
+manager
+
+
+# Composer
+/composer.phar
+/composer.json
+
+
+# assets
+assets
+!assets/images
+
+# dev
+.vscode/
+.htaccess
+.git
