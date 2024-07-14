@@ -12,6 +12,7 @@ manager
 assets/*
 !/assets/images
 !/assets/styles
+!/assets/scripts
 
 # dev
 .vscode/

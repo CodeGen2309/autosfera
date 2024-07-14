@@ -6,10 +6,13 @@
   <link rel="stylesheet" href="/assets/styles/base.css">
   <link rel="stylesheet" href="/assets/styles/main.css">
   <title>Автосфера</title>
+
+  <script src="/assets/scripts/motion.min.js"></script>
 </head>
 
-@php
+<?
 $imgFolder = '/assets/images';
+$iconsFolder = "{$imgFolder}/icons/";
 $brandFolder = "{$imgFolder}/brands";
 
 
@@ -81,21 +84,21 @@ $advants = [
   [
     'title' => 'Качество',
     'desc' => 'Весь закупаемый товар мы проверяем при поступлении на склад сами',
-    'icon' => " {$imgFolder}/advantages/1.svg",
+    'icon' => " {$iconsFolder}/advantages/1.svg",
   ],
   [
     'title' => 'Скорость',
     'desc' => 'В кратчайшие сроки мы предоставим вам всё, что возможно',
-    'icon' => " {$imgFolder}/advantages/2.svg",
+    'icon' => " {$iconsFolder}/advantages/2.svg",
   ],
   [
     'title' => 'Цена',
     'desc' => 'Предоставляем самые лучшие цены',
-    'icon' => " {$imgFolder}/advantages/3.svg",
+    'icon' => " {$iconsFolder}/advantages/3.svg",
   ],
 ];
 
-@endphp
+?>
 
 <body>
 
@@ -105,13 +108,14 @@ $advants = [
 	<img src="/assets/images/bullet.jpg" alt="" class="bullet__img">
 	<div class="bullet__cover"></div>
 	
+  <img class="bullet__logo" src="{{ $imgFolder }}/logo.png">
 	<h1 class="bullet__title">AutoSfera</h1>
 	<p class="bullet__footNote">
 		Онлайн-магазин автозапчастей и товаров для наших верных друзей.
 	</p>
 
   <label class="bullet__search">
-    <img class="bullet__searchIcon" src="/assets/images/search.png">
+    <img class="bullet__searchIcon" src="{{ $iconsFolder }}/search.png">
     <input type="text" class="bullet__searchInput">
   </label>
 </section>
@@ -206,6 +210,22 @@ $advants = [
   </form>
 </section>
 
+
+<script>
+  // Motion.animate(
+  //   '.bullet__logo',
+  //   { opacity: [0,1], },
+  //   { duration: 1 }
+  // )
+
+  let logo = document.querySelector('.bullet__logo')
+
+  Motion.scroll(
+    ({y}) => { logo.style = `opacity: ${1 - y.progress*50}` }
+  )
+
+  console.log(Motion);
+</script>
 
 
 </body>

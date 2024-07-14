@@ -1,5 +1,5 @@
 @php
-  $hdPhone = '+7 985 087 62 43';
+  $hdPhone = '+7-985-087-62-43';
 
   $hdMenu = [
     ['text' => 'Главная',  'link' => '/' ],
@@ -8,47 +8,69 @@
     ['text' => 'Магазин',  'link' => 'shop' ],
   ];
 
+	$iconsFolder = "/assets/images/icons";
+
 @endphp
 
 
 
 <header class="hd">
-  <ul class="hd__menu">
-    @foreach ($hdMenu as $item)
-      <li class="hd__menuItem">
-        <a href="{{ $item['link'] }}" class="hd__menuLink">
-          {{ $item['text'] }}
-        </a>
-      </li>
-    @endforeach
-  </ul>
+	<div class="hd__menuHolder">
+		<img class="hd__menuIcon" src="{{$iconsFolder}}/menu.svg">
+		<ul class="hd__menu">
+			@foreach ($hdMenu as $item)
+				<li class="hd__menuItem">
+					<a href="{{ $item['link'] }}" class="hd__menuLink">
+						{{ $item['text'] }}
+					</a>
+				</li>
+			@endforeach
+		</ul>
+	</div>
 
-  <img class="hd__logo" src="/assets/images/logo.png">
+		<a href="tel:{{ $hdPhone }}" class="hd__phone">
+			<p class="hd__phoneText">Телефон {{ $hdPhone }}</p>
+			<img class="hd__phoneIcon" src="/assets/images/icons/phone.svg">
+		</a>
+	</div>
 
-  <p class="hd__phone">Телефон {{ $hdPhone }}</p>  
 </header>
 
 
 
 <style>
 .hd {
-	display: grid;
-	grid-template-columns: 1fr 60px 1fr;
+	position: fixed;
+	box-sizing: border-box;
+
+	display:flex;
+	justify-content: space-between;
 	height: 60px;
+	width: 100%;
 
 	background: black;
 	color: white;
+	padding: 0 20px;
+	z-index: 999;
+}
+
+.hd__menuHolder {
+	display:flex;
+}
+
+.hd__menuIcon {
+	width: 20px;
+	display: none;
 }
 
 .hd__menu {
 	display: flex;
-
-	list-style: none;
 	margin: 0; padding: 0;
 	flex-grow: 1;
 }
 
 .hd__menuItem {
+	list-style: none;
 	margin: 0; padding: 0;
 }
 
@@ -70,18 +92,34 @@
 	padding: 0px 60px;
 }
 
-.hd__logo {
-	width: 100%;
-	transition: .3s;
-	transform: scale(5);
-	transform-origin: top center;
-	z-index: 999;
-}
 
 .hd__phone {
 	display: flex;
 	align-items: center;
 	justify-content: flex-end;
-	padding: 0 40px;
+
+	margin: 0; padding: 0;
+	text-decoration: none;
+	color: inherit;
 }
+
+.hd__phoneText {
+
+}
+
+.hd__phoneIcon {
+	display: none;
+	width: 30px;
+}
+
+@media (max-width: 700px) {
+	.hd__phoneText { display: none; }
+	.hd__phoneIcon { display: block; }
+}
+
+@media (max-width: 500px) {
+	.hd__menu { display: none; }
+	.hd__menuIcon { display: block; }
+}
+
 </style>
