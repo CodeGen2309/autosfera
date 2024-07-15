@@ -212,19 +212,52 @@ $advants = [
 
 
 <script>
+  let duration = 1
+  let delay = '-0.6'
+
+  let animLine = [
+    [
+      '.bullet__title',
+      { 
+        translateX: [-100, 0],
+        opacity: [0, 1]
+      },
+      {duration, at: delay}
+    ],
+    [
+      '.bullet__footNote',
+      { 
+        translateY: [100, 0],
+        opacity: [0, 1]
+      },
+      {duration, at: delay}
+    ],
+    [
+      '.bullet__search',
+      { 
+        translateY: [100, 0],
+        opacity: [0, 1]
+      },
+      {duration, at: delay}
+    ],
+  ]
+
+  Motion.timeline(animLine)
+
   // Motion.animate(
-  //   '.bullet__logo',
-  //   { opacity: [0,1], },
+  //   '.bullet__title',
+  //   { 
+  //     translateX: [-100, 0],
+  //     opacity: [0, 1]
+  //   },
   //   { duration: 1 }
   // )
 
   let logo = document.querySelector('.bullet__logo')
-
   Motion.scroll(
     ({y}) => { logo.style = `opacity: ${1 - y.progress*50}` }
   )
 
-  console.log(Motion);
 </script>
 
 

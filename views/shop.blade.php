@@ -20,7 +20,6 @@
     style='background-image: url(/assets/images/shop.jpg)'
   >
     <div class="mBlt__filter"></div>
-
       <h1 class="mBlt__title">Магазин AutoSfera</h1>
       <p class="mBlt__desc">
         Просто укажите то, что вы ищите

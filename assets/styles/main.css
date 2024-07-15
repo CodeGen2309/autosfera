@@ -175,6 +175,8 @@
 }
 
 .services__image {
+  object-fit: cover;
+  object-position: center;
   width: 50%;
 }
 
@@ -297,7 +299,10 @@
 }
 
 .callBack__labelName {
-  width: 600px;
+  max-width: 600px;
+  width: 100%;
+  /* margin: 40px; */
+  box-sizing: border-box;
 }
 
 .callBack__input {
@@ -337,4 +342,35 @@
 
 .callback__action:hover {
   background: #32cad8;
+}
+
+
+@media (max-width: 500px) {
+  .bullet__title {}
+  .bullet__search {
+    max-width: 100%;
+    margin: 0 20px;
+  }
+
+  .services__listItem {
+    flex-wrap: wrap;
+  }
+
+  .services__title {
+    font-size: 24px;
+  }
+
+  .services__image {
+    height: 40vh;
+    flex-grow: 1;
+  }
+
+  .services__header {
+    font-size: 30px;
+  }
+
+  .services__footNote {
+    font-size: 14px;
+    margin: 20px 16px;
+  }
 }

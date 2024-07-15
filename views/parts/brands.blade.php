@@ -116,4 +116,14 @@ $brands = [
   position: relative;
 }
 
+@media (max-width: 500px) {
+  .brands__list {
+    flex-wrap: wrap
+  }
+
+  .bnd {
+    width: 100%;
+  }
+}
+
 </style>
