@@ -1,3 +1,11 @@
+@php
+
+$iconsFolder = '/assets/images/icons';
+
+@endphp
+
+
+
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -24,8 +32,14 @@
       <p class="mBlt__desc">
         Просто укажите то, что вы ищите
       </p>
-      <br><br>
+      <br><br>    
     </div>
+
+    <label class="mBlt__search">
+      <img class="mBlt__searchIcon" src="{{ $iconsFolder }}/search.png">
+      <input type="text" class="mBlt__searchInput">
+    </label>
+   
   </section>
 
   @include('parts.brands')
@@ -75,7 +89,7 @@
         { duration: 1.4, delay: 0.2},
       )
       Motion.animate(
-        '.dgwt-wcas-search-wrapp',
+        '.mBlt__search',
         {
           translateY: [200, 0],
           opacity: [0, 1]

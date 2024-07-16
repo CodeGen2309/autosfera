@@ -118,12 +118,29 @@ $brands = [
 
 @media (max-width: 500px) {
   .brands__list {
-    flex-wrap: wrap
+    flex-wrap: wrap;
+    /* gap: 10px; */
   }
 
   .bnd {
     width: 100%;
+    animation: bubbleAnim linear both;
+    animation-timeline: view();
   }
+
+  .bnd__cover {
+  }
+}
+
+@keyframes bubbleAnim {
+  0% { height: 0; }
+
+  50% { 
+    height: 60vh;
+    opacity: 1;
+  }
+
+  100% { height: 30vh; }
 }
 
 </style>

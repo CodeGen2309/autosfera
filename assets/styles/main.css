@@ -1,5 +1,6 @@
 .bullet {
   position: relative;
+  padding: 20px;
 
   display: flex;
   flex-direction: column;
@@ -36,20 +37,26 @@
 
 .bullet__footNote {
   position: relative;
+  text-align: center;
   color: white;
   font-size: 20px;
   margin: 0;
+  padding: 20px;
 }
 
 
 .bullet__search {
   position: relative;
   display: flex;
+  box-sizing: border-box;
+
+  width: 500px;
+  max-width: 100%;
 
   background: white;
   border-radius: 10px;
   overflow: hidden;
-  width: 500px;
+  margin: 30px auto;
 }
 
 
@@ -346,10 +353,27 @@
 
 
 @media (max-width: 500px) {
-  .bullet__title {}
+  .about__logo {
+    display: none;
+  }
+
+  .about__title {
+    font-size: 34px;
+  }
+
+  .about__content {
+  flex-grow: 1;
+  max-width: max-content;
+  }
+
   .bullet__search {
     max-width: 100%;
     margin: 0 20px;
+  }
+
+  .services__list {
+    padding: 0; margin: 0;
+    min-width: 100%;
   }
 
   .services__listItem {
@@ -372,5 +396,19 @@
   .services__footNote {
     font-size: 14px;
     margin: 20px 16px;
+  }
+
+  .advant__list {
+    flex-wrap: wrap;
+    gap: 100px;
+    justify-content: center;
+  }
+
+  .callBack {
+    padding: 40px;
+  }
+
+  .callBack__form {
+    width: 100%;
   }
 }

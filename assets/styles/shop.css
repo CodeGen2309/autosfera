@@ -10,6 +10,7 @@
   position: relative;
   height: 90vh;
   background-attachment: fixed;
+  padding: 0 20px;
 }
 
 .mBlt__filter {
@@ -23,6 +24,7 @@
   color: white;
   position: relative;
   padding: 0; margin: 0;
+  text-align: center;
 }
 
 .mBlt__desc {
@@ -30,17 +32,39 @@
   color: white;
   position: relative;
   font-size: 20px;
+  text-align: center;
 }
 
 .mBlt__search {
   position: relative;
-  width: 600px;
-  padding: 20px;
-  border: none;
-  border-radius: 2px;
-  outline: none;
-  font-size: 18px;
+  display: flex;
+  box-sizing: border-box;
+
+  width: 500px;
+  max-width: 100%;
+
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
 }
+
+
+.mBlt__searchIcon {
+  width: 20px;
+  padding: 15px 20px;
+  opacity: .3;
+}
+
+
+.mBlt__searchInput {
+  border: none;
+  outline: none;
+  flex-grow: 1;
+  font-size: 16px;
+  font-weight: 100;
+  padding: 10px 0;
+}
+
 
 /* Разделы магазина */
 
@@ -136,6 +160,7 @@
   font-weight: 300;
   color: white;
   margin: 0; padding: 0;
+  text-align: center;
 }
 
 
@@ -159,6 +184,7 @@
   font-weight: 300;
   color: white;
   margin: 0; padding: 0;
+  text-align: center;
 }
 
 .mcf__desc {
@@ -197,4 +223,39 @@
 
 .mcf__button:hover {
   background: #32cad8;
+}
+
+
+@media (max-width: 500px) {
+  .mBlt__title {
+    font-size: 32px;
+  }
+
+  .mBlt__desc {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .mBlt__search {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .mcf {
+    padding: 20px;
+  }
+
+  .mcf__form {
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .mcf__input {
+    padding: 20px;
+  }
+
+  .mcf__button {
+    padding: 20px;
+  }
 }
